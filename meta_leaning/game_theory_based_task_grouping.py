@@ -29,7 +29,7 @@ class LearningTaskCluster:
                     Q_value = Q_value + 2 * similarity_calculator(self.task_list[i], self.task_list[j], self.facter)
             Q_value = Q_value / (len(self.task_list) * (len(self.task_list) - 1))
         else:
-            Q_value = 0.1  # float("-inf")
+            Q_value = 0.2 
         return Q_value
 
     def update_Q(self, new_task):
@@ -74,7 +74,7 @@ class LearningTaskCluster:
             Q_before = (self.Q * (len(self.task_list) * (len(self.task_list) - 1)) - decrease_value) / \
                        ((len(self.task_list) - 1) * (len(self.task_list) - 2))
         else:
-            Q_before = 0.1
+            Q_before = 0.2
         return self.Q - Q_before
 
 
