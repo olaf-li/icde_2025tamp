@@ -93,10 +93,7 @@ class Simulator:
             online_workers.extend(new_workers)
 
             time1 = time.time()
-            if len(tasks) > 70:
-                T_A = Batch_Task_Assignment(online_workers, tasks[0:70])
-            else:
-                T_A = Batch_Task_Assignment(online_workers, tasks)
+            T_A = Batch_Task_Assignment(online_workers, tasks)
             matching_plan = T_A.KM(real_or_pre)
 
             assigned_workers = []
